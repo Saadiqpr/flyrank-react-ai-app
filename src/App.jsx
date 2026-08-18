@@ -6,6 +6,9 @@ import Menu from './pages/Menu'
 import Product from './pages/Product'
 import Cart from './pages/Cart'
 import Favorites from './pages/Favorites'
+import Checkout from './pages/Checkout'
+import Confirmation from './pages/Confirmation'
+import Contact from './pages/Contact'
 import { StoreProvider } from './context/StoreContext'
 
 function App() {
@@ -18,6 +21,9 @@ function App() {
             <Route path="menu" element={<Menu />} />
             <Route path="product/:id" element={<Product />} />
             <Route path="cart" element={<Cart />} />
+            <Route path="checkout" element={<Checkout />} />
+            <Route path="confirmation" element={<Confirmation />} />
+            <Route path="contact" element={<Contact />} />
             <Route path="favorites" element={<Favorites />} />
             <Route path="about" element={<About />} />
           </Route>
