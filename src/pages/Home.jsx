@@ -1,119 +1,81 @@
-import { useState } from 'react'
-import reactLogo from '../assets/react.svg'
-import viteLogo from '../assets/vite.svg'
-import heroImg from '../assets/hero.png'
+import { Link } from 'react-router-dom'
+import ProductCard from '../components/ProductCard'
+import { useStore } from '../context/StoreContext'
 import '../App.css'
 
 export default function Home() {
-  const [count, setCount] = useState(0)
+  const { state } = useStore()
+  const featured = state.products.slice(0, 3)
 
   return (
     <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+      <header className="hero-landing">
+        <div className="hero-content">
+          <h1>Crafted coffee, thoughtful moments</h1>
+          <p className="lead">At Brew & Bloom we source, roast, and serve specialty coffee with a focus on seasonality, sustainability and hospitality.</p>
+          <div className="hero-ctas">
+            <Link to="/menu" className="btn">Explore Menu</Link>
+            <Link to="/about" className="btn secondary">Our Story</Link>
+          </div>
         </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
 
-      <div className="ticks"></div>
+        <figure className="hero-figure" aria-hidden>
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1" alt="Barista pouring latte art" />
+        </figure>
+      </header>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
+      <section className="section" aria-labelledby="featured-heading">
+        <h2 id="featured-heading">Featured Drinks</h2>
+        <p style={{ color: 'var(--muted)', marginTop: 8 }}>Seasonal favorites and house classics.</p>
+        <div className="featured-grid" style={{ marginTop: 20 }}>
+          {featured.map((p) => (
+            <ProductCard key={p.id} product={p} />
+          ))}
         </div>
       </section>
 
-      <div className="ticks"></div>
+      <section className="section" aria-labelledby="story-heading">
+        <h2 id="story-heading">Our Story</h2>
+        <div className="story" style={{ marginTop: 16 }}>
+          <div>
+            <p style={{ color: 'var(--muted)' }}>Founded by roasters and baristas, Brew & Bloom started as a small roastery with a single mission: create moments worth savoring. We believe in seasonal menus, handcrafted drinks, and shops that feel like a home away from home.</p>
+            <p style={{ marginTop: 12 }}><Link to="/about" className="btn secondary">Read more</Link></p>
+          </div>
+          <img src="https://images.unsplash.com/photo-1527169402691-a7fe5d5b3d10?q=80&w=1000&auto=format&fit=crop&s=2" alt="Interior of coffee shop" />
+        </div>
+      </section>
+
+      <section className="seasonal">
+        <h2>Seasonal Special — Toasted Honey Latte</h2>
+        <p style={{ marginTop: 8, color: 'var(--muted)' }}>A limited-time creation featuring single-origin espresso and house-roasted honey syrup.</p>
+      </section>
+
+      <section className="section" aria-labelledby="experience-heading">
+        <h2 id="experience-heading">The Brew & Bloom Experience</h2>
+        <div className="experience" style={{ marginTop: 20 }}>
+          <div className="item">
+            <h3>Freshly Roasted</h3>
+            <p style={{ color: 'var(--muted)' }}>Beans roasted weekly by our in-house team.</p>
+          </div>
+          <div className="item">
+            <h3>Handcrafted Drinks</h3>
+            <p style={{ color: 'var(--muted)' }}>Skillful espresso and curated brewing methods.</p>
+          </div>
+          <div className="item">
+            <h3>Welcoming Spaces</h3>
+            <p style={{ color: 'var(--muted)' }}>Thoughtful spaces designed for work and conversation.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="final-cta">
+        <h2>Ready for something delicious?</h2>
+        <p style={{ color: 'var(--muted)', marginTop: 8 }}>Explore our full menu or visit us in person.</p>
+        <div style={{ marginTop: 16 }}>
+          <Link to="/menu" className="btn">View Menu</Link>
+        </div>
+      </section>
+
       <section id="spacer"></section>
     </>
   )

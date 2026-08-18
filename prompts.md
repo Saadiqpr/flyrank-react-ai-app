@@ -53,3 +53,50 @@ After implementing the changes:
 
 Do not implement the complete menu, checkout, or other major features yet. Focus specifically on the visual foundation, header/navigation, footer, and responsive layout.
 
+## Prompt 3 — Premium Café Homepage
+Now transform the Brew & Bloom homepage into a polished, premium café landing page.
+
+The current implementation is functional but visually too simple. Treat this as a visual refinement task, not a request to rebuild the entire application.
+
+Design direction:
+
+* Premium specialty-coffee brand
+* Warm, sophisticated, editorial feel
+* Strong visual hierarchy
+* Generous whitespace
+* High-quality café photography using reliable image URLs or local assets where appropriate
+* Elegant typography pairing
+* Warm coffee-inspired neutral palette with one refined accent color
+* Subtle shadows, borders, gradients, and hover transitions
+* Avoid excessive rounded cards, excessive gradients, generic SaaS styling, and overly bright colors
+* The design should feel like a real premium café website rather than a student dashboard
+
+Homepage sections should include:
+
+1. A strong hero section with a compelling headline, supporting text, primary CTA, secondary CTA, and prominent café imagery.
+2. A featured drinks section with visually appealing product cards.
+3. A short "Our Story" section with image and text.
+4. A seasonal/special section that creates visual variety.
+5. A café experience section highlighting qualities such as freshly roasted coffee, handcrafted drinks, and a welcoming atmosphere.
+6. A final CTA section encouraging users to explore the menu.
+7. A polished footer.
+
+UX requirements:
+
+* Maintain the existing React component architecture.
+* Reuse ProductCard and existing shared components where appropriate.
+* Use semantic HTML.
+* Ensure buttons and links have clear hover and focus states.
+* Maintain keyboard accessibility.
+* Make the entire page responsive for desktop, tablet, and mobile.
+* Do not add unnecessary dependencies.
+
+Before modifying files, inspect the existing Home, Header, Footer, ProductCard, App.css, and index.css implementations.
+
+After implementation:
+
+1. Run the development server and inspect the homepage.
+2. Check the layout at desktop and mobile widths.
+3. Run `npm run build`.
+4. Fix any build errors or obvious layout problems before finishing.
+5. Briefly report what you changed and what you verified.
