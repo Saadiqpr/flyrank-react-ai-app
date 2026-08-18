@@ -1,8 +1,8 @@
 export default function CategoryFilter({ categories = [], selected, onSelect }) {
   return (
-    <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }} aria-label="Filter categories">
+    <div className="category-filter" role="tablist" aria-label="Categories">
       {categories.map((c) => (
-        <button key={c} onClick={() => onSelect(c)} className={`btn ${selected === c ? '' : 'secondary'}`} aria-pressed={selected === c}>
+        <button key={c} onClick={() => onSelect(c)} className={`category-pill ${selected === c ? 'active' : ''}`} aria-pressed={selected === c} role="tab">
           {c}
         </button>
       ))}

@@ -21,34 +21,42 @@ export default function Menu() {
   }, [state.products, query, category])
 
   return (
-    <section className="container">
-      <header style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12 }}>
-        <div>
-          <h1>Menu</h1>
-          <p style={{ color: 'var(--muted)' }}>Explore our handcrafted drinks and fresh pastries.</p>
-        </div>
-        <div style={{ display: 'flex', gap: 12 }}>
-          <SearchBar onSearch={setQuery} />
-        </div>
-      </header>
-
-      <div style={{ marginTop: 18 }}>
-        <CategoryFilter categories={categories} selected={category} onSelect={setCategory} />
-      </div>
-
-      <div style={{ marginTop: 20 }}>
-        {results.length === 0 ? (
-          <div style={{ padding: 40, textAlign: 'center', color: 'var(--muted)' }}>
-            No items found. Try a different category or search term.
+    <main>
+      <section className="menu-hero" aria-hidden>
+        <div className="menu-hero-inner container">
+          <div className="menu-hero-copy">
+            <h1>Our Menu</h1>
+            <p className="lead">Thoughtfully sourced, expertly prepared. Explore our selection of seasonal drinks and freshly baked goods.</p>
           </div>
-        ) : (
-          <div className="featured-grid">
-            {results.map((p) => (
-              <ProductCard key={p.id} product={p} />
-            ))}
+          <div className="menu-hero-search">
+            <SearchBar onSearch={setQuery} />
           </div>
-        )}
-      </div>
-    </section>
+        </div>
+      </section>
+
+      <section className="container" style={{ paddingTop: 18 }}>
+        <div className="category-row" role="tablist" aria-label="Menu categories">
+          <CategoryFilter categories={categories} selected={category} onSelect={setCategory} />
+        </div>
+
+        <div style={{ marginTop: 20 }}>
+          {results.length === 0 ? (
+            <div className="empty-state">
+              <h3>No results</h3>
+              <p>We couldn't find any items that match. Try a different category or clear your search.</p>
+              <div style={{ marginTop: 12 }}>
+                <button className="btn" onClick={() => { setCategory('All'); setQuery('') }}>Reset filters</button>
+              </div>
+            </div>
+          ) : (
+            <div className="product-grid">
+              {results.map((p) => (
+                <ProductCard key={p.id} product={p} />
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+    </main>
   )
 }
