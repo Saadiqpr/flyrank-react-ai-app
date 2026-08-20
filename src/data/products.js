@@ -19,7 +19,7 @@ const products = [
     description: 'Silky microfoam layered over a rich espresso — a morning classic.',
     price: 4.25,
     rating: 4.7,
-    image: new URL('../assets/p3.jpg', import.meta.url).href,
+    image: new URL('../assets/p11.jpg', import.meta.url).href,
     sizes: ['Small', 'Medium', 'Large'],
     milk: ['Whole', 'Oat', 'Soy'],
     addons: [{ name: 'Cinnamon', price: 0.3 }],
@@ -84,7 +84,7 @@ const products = [
     description: 'Flaky croissant filled with almond frangipane and toasted almonds.',
     price: 3.75,
     rating: 4.9,
-    image: new URL('../assets/p16.jpg', import.meta.url).href,
+    image: new URL('../assets/p13.jpg', import.meta.url).href,
     featured: false,
   },
   {
@@ -104,7 +104,7 @@ const products = [
     description: 'Velvety textured milk over a concentrated espresso shot.',
     price: 4.25,
     rating: 4.6,
-    image: new URL('../assets/p1.jpg', import.meta.url).href,
+    image: new URL('../assets/p14.jpg', import.meta.url).href,
     sizes: ['Small', 'Medium'],
     milk: ['Whole', 'Oat'],
     addons: [],
@@ -179,7 +179,7 @@ const products = [
     description: 'Vanilla gelato finished with a hot espresso shot.',
     price: 5.5,
     rating: 4.8,
-    image: new URL('../assets/p8.jpg', import.meta.url).href,
+    image: new URL('../assets/p16.jpg', import.meta.url).href,
     featured: false,
   },
   {
@@ -199,7 +199,7 @@ const products = [
     description: 'Golden turmeric latte with warming spices.',
     price: 4.5,
     rating: 4.1,
-    image: new URL('../assets/p5.jpg', import.meta.url).href,
+    image: new URL('../assets/p12.jpg', import.meta.url).href,
     sizes: ['Small', 'Medium'],
     milk: ['Whole', 'Oat'],
     addons: [],
@@ -232,7 +232,7 @@ const products = [
     description: 'Bright espresso poured over tonic and ice.',
     price: 4.25,
     rating: 4.3,
-    image: new URL('../assets/p18.jpg', import.meta.url).href,
+    image: new URL('../assets/p4.jpg', import.meta.url).href,
     featured: false,
   }
 ]

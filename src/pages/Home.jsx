@@ -16,7 +16,7 @@ export default function Home() {
         role="img"
         aria-label="Barista pouring latte art in warm café setting"
         style={{
-          backgroundImage: `linear-gradient(180deg, rgba(20,12,8,0.55), rgba(20,12,8,0.25)), url(${new URL('../assets/hero.png', import.meta.url).href})`,
+          backgroundImage: `linear-gradient(180deg, rgba(20,12,8,0.55), rgba(20,12,8,0.25)), url(${new URL('../assets/hero.jpg', import.meta.url).href})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -62,7 +62,7 @@ export default function Home() {
       <section className="section story-split" aria-labelledby="our-story">
         <div className="story-inner">
           <figure className="story-image" aria-hidden>
-            <img src="https://images.unsplash.com/photo-1527169402691-a7fe5d5b3d10?q=80&w=1600&auto=format&fit=crop&s=2" alt="Warm café interior with sunlight" />
+            <img src={new URL('../assets/p3.jpg', import.meta.url).href} alt="Warm café interior with sunlight" />
           </figure>
 
           <div className="story-copy">

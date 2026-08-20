@@ -25,7 +25,10 @@ const images = {
   p17: 'https://images.unsplash.com/photo-1517686469429-8a5b3f6cf3b1?q=80&w=800&auto=format&fit=crop&s=1',
   p18: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=900&auto=format&fit=crop&s=1',
   p19: 'https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?q=80&w=900&auto=format&fit=crop&s=1',
-  p20: 'https://images.unsplash.com/photo-1466458548670-7bdfd0a0f1f1?q=80&w=700&auto=format&fit=crop&s=1'
+  p20: 'https://images.unsplash.com/photo-1466458548670-7bdfd0a0f1f1?q=80&w=700&auto=format&fit=crop&s=1',
+  hero: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=2000&auto=format&fit=crop&s=1'
+  ,
+  story: 'https://images.unsplash.com/photo-1527169402691-a7fe5d5b3d10?q=80&w=1600&auto=format&fit=crop&s=2'
 }
 
 async function download(url, dest) {
